@@ -1,6 +1,10 @@
 # NativePayload_Image
 Transferring Backdoor Payloads with BMP Image Pixels also Bypassing AVS
 with this tool you can Make and Modify Bitmap files for Injecting Meterpreter payload to file also you can use this tool like backdoor for Getting Meterpreter Session by Local Bitmap Files or With Downloading Bitmap Files by Url  (HTTP Traffic).
+
+for more information and using tool "NativePayload_Image.exe" Step by Step Please visit one of these links :
+         link: https://www.peerlyst.com/posts/transferring-backdoor-payloads-with-bmp-image-pixels-damon-mohammadbagher 
+         , link: https://www.linkedin.com/pulse/transferring-backdoor-payloads-bmp-image-pixels-damon-mohammadbagher
    
    C# Code : NativePayload_Image.exe  ,  Published by Damon Mohammadbagher
    
@@ -20,4 +24,5 @@ with this tool you can Make and Modify Bitmap files for Injecting Meterpreter pa
         1. link: https://www.peerlyst.com/posts/transferring-backdoor-payloads-with-bmp-image-pixels-damon-mohammadbagher
         2. link: https://www.linkedin.com/pulse/transferring-backdoor-payloads-bmp-image-pixels-damon-mohammadbagher
         
+       
         
