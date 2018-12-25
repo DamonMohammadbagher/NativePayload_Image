@@ -8,9 +8,9 @@ eBook chapter 11 , PDF Download : https://github.com/DamonMohammadbagher/eBook-B
 
 Related Video : 
 
-Video 1 Script and C# Code : https://www.youtube.com/watch?v=D5tfh23vIOQ
+Video 1 Script (Step by step) : https://www.youtube.com/watch?v=D5tfh23vIOQ
 
-Video 2 : Chat/Text-Messaging Mode and Transferring Commands via BMP Images
+Video 2 : Chat/Text-Messaging Mode and Transferring Commands via BMP Images (Step by step)
 
 Video 2 : Linux Script Code : https://www.youtube.com/watch?v=2n6ZLbJxlkw
 
