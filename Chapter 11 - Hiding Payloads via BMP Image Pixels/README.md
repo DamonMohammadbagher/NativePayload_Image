@@ -27,4 +27,8 @@ STEP 2 : after "AV Signature Database Updated" your Internet Connection should b
 
 STEP 3 : Now you can Copy and Paste your C# code to your Virtual Machine for test .
 
-# NativePayload_ARP.sh  help :
+# NativePayload_Image.sh  help :
+
+for more information Please use this syntax or for Using this tool Step by step please read this Chapter-11(Part2) PDF file
+
+Chapter-11(Part2) PDF file link : https://github.com/DamonMohammadbagher/eBook-BypassingAVsByCSharp/blob/master/CH11/Bypassing%20Anti%20Viruses%20by%20C%23.NET%20Programming%20Chapter%2011-Part2.pdf
