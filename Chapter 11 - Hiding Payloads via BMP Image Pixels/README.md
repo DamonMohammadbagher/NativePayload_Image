@@ -16,7 +16,6 @@ Video 2 : Linux Script Code : https://www.youtube.com/watch?v=2n6ZLbJxlkw
 
 
 
-
 Warning :Don't Use "www.virustotal.com" or something like that , Never Ever ;D
 
 Recommended:
@@ -28,6 +27,8 @@ STEP 2 : after "AV Signature Database Updated" your Internet Connection should b
 STEP 3 : Now you can Copy and Paste your C# code to your Virtual Machine for test .
 
 # NativePayload_Image.sh  help :
+
+Note : this Script Tested by Kali Linux (only)
 
 for more information Please use this syntax "./NativePayload_Image.sh  help" or for Using this tool Step by step please read this Chapter-11(Part2) PDF file . (Recommended)
 
