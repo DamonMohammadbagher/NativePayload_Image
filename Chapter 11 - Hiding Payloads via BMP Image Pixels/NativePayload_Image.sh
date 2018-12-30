@@ -619,7 +619,7 @@ then
 
 		if [[ $input == "exit" ]]
 			then
-			exit 1;
+			exit ;
 		elif [[ "$input" == "@version" ]] ;
 			then
 			echo "[@]:Script.[NativePayload_Image.sh].version:2"
@@ -1213,7 +1213,7 @@ do
 		read -p "[>]:Enter::Chat:input:#" input
 		if [[ $input == "exit" ]]
 			then
-			exit 1;
+			exit ;
 		elif [[ "$input" == "@version" ]] ;
 			then
 			echo "[@]:Script.[NativePayload_Image.sh].version:2"
