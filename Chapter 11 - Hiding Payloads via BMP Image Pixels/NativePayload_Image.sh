@@ -612,54 +612,59 @@ then
 	do 
 		if [ "$iscmdshellonoff" == "off" ] ; 
 		then
-		read -p "[>]:Enter::Chat:input:#" input
-		fi
 
-		if [ "$input" == "exit" ] ; 
-		then
-		break
-		fi
-		if [ "$input" == "@base64off" ] ; 
-		then
-		tput setaf 10
-		echo "[@]:ChatMode::SendbyBMPviaHTTP::BMP.payload.requests.base64:Off"
-		tput setaf 2
-		isb64="false"
+		while true ; 
+		do
 		read -p "[>]:Enter::Chat:input:#" input
-		fi
-		if [ "$input" == "@base64on" ] ; 
-		then
-		tput setaf 10
-		echo "[@]:ChatMode::SendbyBMPviaHTTP::BMP.payload.requests.base64:On"
-		tput setaf 2
-		isb64="true"
-		read -p "[>]:Enter::Chat:input:#" input
-		fi
-		if [ "$input" == "@msgsave" ] ; 
-		then
+
+		if [[ $input == "exit" ]]
+			then
+			exit 1;
+		elif [[ "$input" == "@version" ]] ;
+			then
+			echo "[@]:Script.[NativePayload_Image.sh].version:2"
+		elif [[ "$input" == "@base64off" ]]  
+			then
+			tput setaf 10
+			echo "[@]:ChatMode::SendbyBMPviaHTTP::BMP.payload.requests.base64:Off"
+			tput setaf 2
+			isb64="false"
+		elif [[ "$input" == "@base64on" ]] 
+			then
+			tput setaf 10
+			echo "[@]:ChatMode::SendbyBMPviaHTTP::BMP.payload.requests.base64:On"
+			tput setaf 2
+			isb64="true"						
+		elif [[ "$input" == "@msgsave" ]] 
+			then
 			Time=`date '+%d-%m-%Y.%H-%M-%S'`
 			echo "[@]:ChatMode::SendbyBMPviaHTTP::Remote.host.address.[$4:$6].async:Connected" >> Messages_$Time.txt
 			for index in ${!ChatInputArray[*]}
 			do
 			echo "$index ${ChatInputArray[$index]}" >> Messages_$Time.txt
 			done
-			echo "[@]:Messages.Saved:[Messages_$Time.txt]"
-			read -p "[>]:Enter::Chat:input:#" input
-		fi
-		if [ "$input" == "@msglist" ] ; 
-		then
-		tput setaf 10
-		echo "[@]:Messages.list:Show"
-		printf '%s' "[@]:ChatMode::SendbyBMPviaHTTP::Remote.host.address.[$4:$6].async:Connected"
-		echo "$(tput setab 4)"
-		for index in ${!ChatInputArray[*]}
-		do
-		echo "$(tput setab 4)" $index ${ChatInputArray[$index]} 
+			echo "[@]:Messages.Saved:[Messages_$Time.txt]"			
+		elif [[ "$input" == "@msglist" ]] 
+			then
+			tput setaf 10
+			echo "[@]:Messages.list:Show"
+			printf '%s' "[@]:ChatMode::SendbyBMPviaHTTP::Remote.host.address.[$4:$6].async:Connected"
+			echo "$(tput setab 4)"
+			for index in ${!ChatInputArray[*]}
+			do
+			echo "$(tput setab 4)" $index ${ChatInputArray[$index]} 
+			done
+			echo "$(tput setab 0)"
+			echo
+			tput setaf 2
+		elif [[ $input != '' ]]
+			then
+			break;
+			else 
+			Again="Again;)"
+			fi
 		done
-		echo "$(tput setab 0)"
-		echo
-		tput setaf 2
-		read -p "[>]:Enter::Chat:input:#" input
+
 		fi
 
 		if [ "$iscmdshellonoff" == "off" ] ; 
@@ -852,6 +857,7 @@ then
 			echo "[!]:Base64 Payload/Message Detected!"
 			tput setaf 3;
 			echo "[!]:your Message Text/Payload with length [$myPaylength] is :" $decode
+			echo
 			Timestr=`date '+%d-%m-%Y.%H-%M-%S'`
 			ChatInputArray+=("$Timestr <--Rec-B- $file Message:[$decode]")
 			tput setaf 2;
@@ -930,6 +936,7 @@ then
 			iscmdshellonoff="off"
 			tput setaf 3;
 			echo "[!]:your Message Text/Payload with length [$myPaylength] is :" $PayRAWtext
+			echo
 			Timestr=`date '+%d-%m-%Y.%H-%M-%S'`
 			ChatInputArray+=("$Timestr <--Rec-N- $file Message:[$PayRAWtext]")
 			tput setaf 2;
@@ -937,7 +944,6 @@ then
 		fi
 
 
-	echo 
 	tput setaf 2;
 
 	Timestr=`date '+%d-%m-%Y.%H-%M-%S'`
@@ -1111,6 +1117,7 @@ do
 			echo "[!]:Base64 Payload/Message Detected!"
 			tput setaf 3;
 			echo "[!]:your Message Text/Payload with length [$myPaylength] is :" $decode
+			echo
 			Timestr=`date '+%d-%m-%Y.%H-%M-%S'`
 			ChatInputArray+=("$Timestr <--Rec-B- $file Message:[$decode]")
 			tput setaf 2;
@@ -1189,6 +1196,7 @@ do
 			iscmdshellonoff="off"
 			tput setaf 3;
 			echo "[!]:your Message Text/Payload with length [$myPaylength] is :" $PayRAWtext
+			echo
 			Timestr=`date '+%d-%m-%Y.%H-%M-%S'`
 			ChatInputArray+=("$Timestr <--Rec-N- $file Message:[$PayRAWtext]")
 			tput setaf 2;
@@ -1199,31 +1207,30 @@ do
 		
 		if [ "$iscmdshellonoff" == "off" ] ; 
 		then
+			
+		while true ; 
+		do
 		read -p "[>]:Enter::Chat:input:#" input
-		fi
-
-		if [ "$input" == "exit" ] ; 
-		then
-		break
-		fi
-		if [ "$input" == "@base64off" ] ; 
-		then
-		tput setaf 10
-		echo "[@]:ChatMode::SendbyBMPviaHTTP::BMP.payload.requests.base64:Off"
-		tput setaf 2
-		isb64="false"
-		read -p "[>]:Enter::Chat:input:#" input
-		fi
-		if [ "$input" == "@base64on" ] ; 
-		then
-		tput setaf 10
-		echo "[@]:ChatMode::SendbyBMPviaHTTP::BMP.payload.requests.base64:On"
-		tput setaf 2
-		isb64="true"
-		read -p "[>]:Enter::Chat:input:#" input
-		fi
-		if [ "$input" == "@msgsave" ] ; 
-		then
+		if [[ $input == "exit" ]]
+			then
+			exit 1;
+		elif [[ "$input" == "@version" ]] ;
+			then
+			echo "[@]:Script.[NativePayload_Image.sh].version:2"
+		elif [[ "$input" == "@base64off" ]]  
+			then
+			tput setaf 10
+			echo "[@]:ChatMode::SendbyBMPviaHTTP::BMP.payload.requests.base64:Off"
+			tput setaf 2
+			isb64="false"
+		elif [[ "$input" == "@base64on" ]] 
+			then
+			tput setaf 10
+			echo "[@]:ChatMode::SendbyBMPviaHTTP::BMP.payload.requests.base64:On"
+			tput setaf 2
+			isb64="true"
+		elif [[ "$input" == "@msgsave" ]] 
+			then
 			Time=`date '+%d-%m-%Y.%H-%M-%S'`
 			echo "[@]:ChatMode::SendbyBMPviaHTTP::Remote.host.address.[$4:$6].async:Connected" >> Messages_$Time.txt
 			for index in ${!ChatInputArray[*]}
@@ -1231,22 +1238,26 @@ do
 			echo "$index ${ChatInputArray[$index]}" >> Messages_$Time.txt
 			done
 			echo "[@]:Messages.Saved:[Messages_$Time.txt]"
-			read -p "[>]:Enter::Chat:input:#" input
-		fi
-		if [ "$input" == "@msglist" ] ; 
-		then
-		tput setaf 10
-		echo "[@]:Messages.list:Show"
-		printf '%s' "[@]:ChatMode::SendbyBMPviaHTTP::Remote.host.address.[$4:$6].async:Connected"
-		echo "$(tput setab 4)"
-		for index in ${!ChatInputArray[*]}
-		do
-		echo "$(tput setab 4)" $index ${ChatInputArray[$index]} 
+		elif [[ "$input" == "@msglist" ]] 
+			then
+			tput setaf 10
+			echo "[@]:Messages.list:Show"
+			printf '%s' "[@]:ChatMode::SendbyBMPviaHTTP::Remote.host.address.[$4:$6].async:Connected"
+			echo "$(tput setab 4)"
+			for index in ${!ChatInputArray[*]}
+			do
+			echo "$(tput setab 4)" $index ${ChatInputArray[$index]} 
+			done
+			echo "$(tput setab 0)"
+			echo
+			tput setaf 2
+		elif [[ $input != '' ]]
+			then
+			break
+			else 
+			Again="Again;)"
+			fi
 		done
-		echo "$(tput setab 0)"
-		echo
-		tput setaf 2
-		read -p "[>]:Enter::Chat:input:#" input
 		fi
 
 		if [ "$iscmdshellonoff" == "off" ] ; 
@@ -1311,6 +1322,7 @@ do
 
 		#### making signal to download Text/Chat via BMP file (ChatviaPixels.bmp) ####
 		fi
+		
 		echo " " > SimpleHTTPclientChat.txt 
 		
 done
