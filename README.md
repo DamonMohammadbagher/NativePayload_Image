@@ -24,5 +24,7 @@ for more information and using tool "NativePayload_Image.exe" Step by Step Pleas
         1. link: https://www.peerlyst.com/posts/transferring-backdoor-payloads-with-bmp-image-pixels-damon-mohammadbagher
         2. link: https://www.linkedin.com/pulse/transferring-backdoor-payloads-bmp-image-pixels-damon-mohammadbagher
         
+<p><a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://github.com/DamonMohammadbagher/NativePayload_Image"/></a></p>
+        
        
         
